@@ -1,0 +1,18 @@
+version: "3"
+services:
+  goapp:
+    build:
+      context: .
+      dockerfile: ./Dockerfile.go
+    command: bash -c "cd /app && go run ."
+    ports:
+      - "11200:11200"
+    depends_on:
+      - redis
+    volumes:
+      - "./goapp:/app"
+  redis:
+    image: redis:7-bookworm
+    volumes:
+      - "./redis-data:/data"
+
