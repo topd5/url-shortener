@@ -21,7 +21,7 @@ func InitRedis() {
 }
 
 func RedisSet(key string, value string, ttlSeconds ...int) error {
-	ttl := time.Second * 3600 // todo: set to 0 when ready
+	ttl := time.Second * 0
 
 	if len(ttlSeconds) > 0 {
 		ttl = time.Second * time.Duration(ttlSeconds[0])
