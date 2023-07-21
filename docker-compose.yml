@@ -4,7 +4,8 @@ services:
     build:
       context: .
       dockerfile: ./Dockerfile.go
-    command: bash -c "cd /app && go run ."
+    # command: bash -c "cd /app && go run ."
+    command: bash -c "cd /app && air ."
     ports:
       - "11200:11200"
     depends_on:
